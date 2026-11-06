@@ -1,0 +1,35 @@
+[project]
+name = "primitive-db"
+version = "0.1.0"
+description = "A small JSON-backed command-line database for a Python course project"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    { name = "Kirill Glukhikh" },
+]
+dependencies = [
+    "prettytable>=3.12.0",
+    "prompt>=0.4.1",
+]
+
+[project.scripts]
+project = "primitive_db.main:main"
+database = "primitive_db.main:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.0"]
+build-backend = "uv_build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = ["venv", ".venv", "dist", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
